@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="11E53" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Photo" syncable="YES">
+        <attribute name="farm" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="fid" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="isprimary" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="pid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="secret" attributeType="String" syncable="YES"/>
+        <attribute name="server" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PhotoSets" syncable="YES">
+        <attribute name="can_comment" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="count_comments" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="count_views" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="date_create" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="date_update" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="descriptions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="farm" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="fid" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="needs_interstitial" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="photos" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="primary" attributeType="String" syncable="YES"/>
+        <attribute name="secret" attributeType="String" syncable="YES"/>
+        <attribute name="server" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="videos" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="visibility_can_see_set" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="getSlide" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Slide" inverseName="photoSet" inverseEntity="Slide" syncable="YES"/>
+    </entity>
+    <entity name="Slide" syncable="YES">
+        <attribute name="fid" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <relationship name="photoSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PhotoSets" inverseName="getSlide" inverseEntity="PhotoSets" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Photo" positionX="153" positionY="201" width="128" height="150"/>
+        <element name="PhotoSets" positionX="403" positionY="274" width="128" height="300"/>
+        <element name="Slide" positionX="153" positionY="387" width="128" height="90"/>
+    </elements>
+</model>
